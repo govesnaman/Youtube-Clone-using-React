@@ -1,41 +1,66 @@
 import React, {Component} from "react";
-
+import "../Styles/CommentArea.css"
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faUser} from '@fortawesome/free-solid-svg-icons';
 class CommentArea extends Component{
+    
     constructor(){
         super();
         this.state = {
-            author: "",
-            comment: "",
+        commentArray : [],
+        author: "",
+        comment: "",
           };
-        this.x = [];
-    }
+    } 
       onFormSubmit = event => {
         event.preventDefault();
         console.log(this);
-       this.x.push(this.state);
-       console.log(this.x);
+        const newCommentArray = [...this.state.commentArray];
+        newCommentArray.push({author:this.state.author,comment: this.state.comment});
+        this.setState({
+        commentArray: newCommentArray
+        });
+       console.log(this.state);
+       this.setState({
+        author : "",
+        comment : ""});
+       console.log(this);
+
       };
+
       onInputChange = event => {
+          
         this.setState({
           author: event.target.value,
-        });}
+        });
+      }
     onInputChange1 = event => {
             this.setState({
               comment: event.target.value,
             });
+            //this.com.comment = event.target.value;
+
       
       };
      cancel=()=>{
-         console.log("enetered cancel")
         this.setState({author : "",
        comment : ""});
     }
 
 render()
-{ const list = this.x.map((author, comment) => {
-    console.log("trying");
-    return <div>{author}{comment}</div>;
-  });
+{ console.log(this.state.commentArray);
+    const list = this.state.commentArray.map((anObjectMapped) => {
+        return (<div className = "commentar">
+            
+            <p className="username" key={'${anObjectMapped.author}_{anObjectMapped.comment}'}>
+            <FontAwesomeIcon className="icon" icon={faUser} size = "fa-lg"/>
+                {anObjectMapped.author}
+            </p>
+            <p className="comment" key={'${anObjectMapped.author}_{anObjectMapped.comment}'}>
+            {anObjectMapped.comment}
+        </p>
+        </div>
+      );})
   return (
 <div>
 <p className="comments"> Comments </p>
@@ -48,7 +73,8 @@ render()
      <input className="btnss" type="button" onClick={this.cancel} value="Cancel"/>
      </div>
      </form>
-     {list}
+     
+        {list}
      </div>
      </div>
 )};

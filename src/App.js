@@ -8,11 +8,11 @@ class App extends Component {
     videos: [],
     selectedVideo: null,
   };
-
+//AIzaSyD-Wh3hTdt8Sdyd_LdKyeslAYZeOUvVsn0
 
 
   onTermSubmit = async term => {
-     fetch("https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=15&order=viewCount&q="+term+"&type=video&videoDefinition=high&key="+"AIzaSyD-Wh3hTdt8Sdyd_LdKyeslAYZeOUvVsn0")
+     fetch("https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=15&order=viewCount&q="+term+"&type=video&videoDefinition=high&key="+"AIzaSyDOc4rp6fo5T06H_F7SDttA-FJeAMKYzqc")
                   .then(res => res.json())
                   .then(
                     (result) => {
