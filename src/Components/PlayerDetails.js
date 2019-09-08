@@ -1,13 +1,12 @@
 import React  from "react";
 import "../Styles/PlayerDetails.css";
 import Heart from "./Heart";
-import CommentBox from "./CommentBox";
-
+import CommentArea from "./CommentArea"
 // import '../node_modules/font-awesome/css/font-awesome.min.css'; 
 
 const PlayerDetails = ({ selectedVideo }) => {
   if (!selectedVideo) {
-    return <div>Loading...</div>;
+    return <div class = "novids">No Videos Found</div>;
   }
 
   const videoSrc = `https://www.youtube.com/embed/${selectedVideo.id.videoId}`;
@@ -29,18 +28,7 @@ const PlayerDetails = ({ selectedVideo }) => {
         <p className = "grey">{channelTitle}</p>
       </div>
       
-     <p className="comments"> Comments </p>
-     <div className="textboxes">
-    <form>
-     <input type="text" className="writer" placeholder="Author"/>
-     <input type="text" className="writer" placeholder="Comment"/>
-     <div className="buttons">
-     <input className="btnss" type="Submit" value="Comment"/>
-     <input className="btnss" type="button" value="Cancel"/>
-     </div>
-     </form>
-     <CommentBox/>
-     </div>
+     <CommentArea/>
     </div>
   );
 };
