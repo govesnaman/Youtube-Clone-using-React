@@ -4,10 +4,10 @@
 
 .text{
     font-family: Arial, Helvetica, sans-serif;
-    margin: 0px 30px;
+    margin: 0px 15px 0px 30px;
 }
 
-p{
+.grey{
     color: grey;
     margin: 7px;
 }
@@ -22,4 +22,35 @@ h4{
     display: inline;
     float: right;
     font-size: 1.5em;
+}
+.comments{
+    color: black;
+    size: 1.5em;
+    margin: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+.textboxes{
+    margin: 30px;
+}
+.writer{
+    
+    /* border: 1px solid black; */
+    border: transparent;
+     border-bottom: 1px solid grey;
+    height: 1.5em;
+    width: 45%;
+    margin: 10px;
+    outline: 0px;
+    font-size: 1em;
+    padding: 1px; 
+}
+
+.buttons{
+    float: right;
+    margin: 5px 50px;
+}
+.btnss{
+    padding: 10px;
+    width: 90px;
 }
