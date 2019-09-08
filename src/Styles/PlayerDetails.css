@@ -1,0 +1,25 @@
+.player{
+    margin: 10px 10px 10px 30px;
+}
+
+.text{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px 30px;
+}
+
+p{
+    color: grey;
+    margin: 7px;
+}
+
+h4{
+    margin: 7px;
+    display: inline;
+    font-size: 1.1em;
+}
+
+.font{
+    display: inline;
+    float: right;
+    font-size: 1.5em;
+}

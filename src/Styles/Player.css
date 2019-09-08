@@ -1,0 +1,14 @@
+.column1{
+    width: 65%;
+    margin: 10px;
+}
+
+.column2{
+    width: 35%;
+    margin: 10px;
+}
+
+.box{
+    display: flex;
+
+}
