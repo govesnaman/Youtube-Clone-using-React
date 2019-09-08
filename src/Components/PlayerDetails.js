@@ -6,7 +6,7 @@ import CommentArea from "./CommentArea"
 
 const PlayerDetails = ({ selectedVideo }) => {
   if (!selectedVideo) {
-    return <div class = "novids">No Videos Found</div>;
+    return <div className = "novids">No Videos Found</div>;
   }
 
   const videoSrc = `https://www.youtube.com/embed/${selectedVideo.id.videoId}`;

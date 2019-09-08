@@ -10,6 +10,7 @@ class CommentArea extends Component{
         commentArray : [],
         author: "",
         comment: "",
+       
           };
     } 
       onFormSubmit = event => {
@@ -29,12 +30,14 @@ class CommentArea extends Component{
       };
 
       onInputChange = event => {
-          
+        
         this.setState({
           author: event.target.value,
+         
         });
       }
     onInputChange1 = event => {
+        
             this.setState({
               comment: event.target.value,
             });
@@ -48,15 +51,15 @@ class CommentArea extends Component{
     }
 
 render()
-{ console.log(this.state.commentArray);
+{ 
     const list = this.state.commentArray.map((anObjectMapped) => {
-        return (<div className = "commentar">
+        return (<div key = {anObjectMapped.author} className = "commentar">
             
-            <p className="username" key={'${anObjectMapped.author}_{anObjectMapped.comment}'}>
-            <FontAwesomeIcon className="icon" icon={faUser} size = "fa-lg"/>
+            <p className="username">
+            <FontAwesomeIcon className="icon" icon={faUser} size = "lg"/>
                 {anObjectMapped.author}
             </p>
-            <p className="comment" key={'${anObjectMapped.author}_{anObjectMapped.comment}'}>
+            <p className="comment">
             {anObjectMapped.comment}
         </p>
         </div>
@@ -69,7 +72,7 @@ render()
      <input type="text" className="writer" placeholder="Name" value={this.state.author} onChange={this.onInputChange}/>
      <input type="text" className="writer" placeholder="Comment" value={this.state.comment} onChange={this.onInputChange1}/>
      <div className="buttons">
-     <input className="btnss" type="Submit" value="Comment"/>
+     <input className="btnss" type="Submit" defaultValue="Comment"/>
      <input className="btnss" type="button" onClick={this.cancel} value="Cancel"/>
      </div>
      </form>
